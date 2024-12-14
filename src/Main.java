@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (true) {
-            System.out.println(MenuPrint.accountMenu);
             int a = sc.nextInt();
             switch (a) {
                 case 1 -> {
@@ -19,8 +18,8 @@ public class Main {
                                 break;
                             }
                             switch (option) {
-                                case 1 -> System.out.println(Customer.generalDeposit);
-                                case 2 -> System.out.println(Account.printAcoounts());
+                                case 1 -> System.out.println(Bank.generalDeposit);
+                                case 2 -> System.out.println(BankUtils.printAcoounts());
                             }
 
                         }
@@ -47,20 +46,21 @@ public class Main {
                             Customer customer = new Customer();
                             customer.setName(name);
                             customer.setPassword(password);
-                            Account.createAccount(customer);
+                            BankUtils.createAccount(customer);
                         }
                         case 2 -> {
                             System.out.println("Adinizi ve soyadinizi daxil edin - ");
                             String name = sc.nextLine();
-                            Customer customer = Account.enterAccount(name);
+                            Customer customer = BankUtils.enterAccount(name);
                         }
                         case 3 -> {
                             System.out.println("Adinizi ve soyadinizi daxil edin - ");
                             String name = sc.nextLine();
-                            Customer customer = Account.enterAccount(name);
+                            Customer customer = BankUtils.enterAccount(name);
                             System.out.println("Daxil etmek istediyiniz meblegi yazin - ");
-                            int money = sc.nextInt();
-                            System.out.println(customer.getMoney() + money);  // burada customer.getMoney null oldugu ucun ustune toplamaq olmur
+                            Double money = sc.nextDouble();
+                            System.out.println("Adinizi daxil edin - ");
+                            BankUtils.addMoney(money);
                         }
                     }
                 }

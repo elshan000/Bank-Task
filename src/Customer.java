@@ -1,12 +1,9 @@
 public class Customer {
-    public static Customer[] customers = new Customer [2];
-    public static int customerCount = 0;
-    public static int generalDeposit = 0;
 
     private String name;
     private String password;
-    private int money=0;
-    private int deposit=0;
+    private Double money=0.0;
+    private Double deposit=0.0;
 
     public void setName(String name){
         this.name = name;
@@ -20,16 +17,16 @@ public class Customer {
     public String getPassword(){
         return password;
     }
-    public void setMoney(int money){
+    public void setMoney(Double money){
         this.money = money;
     }
-    public int getMoney(){
+    public Double getMoney(){
         return money;
     }
-    public void setDeposit(int deposit){
+    public void setDeposit(Double deposit){
         this.deposit = deposit;
     }
-    public int getDeposit(){
+    public Double getDeposit(){
         return deposit;
     }
 
